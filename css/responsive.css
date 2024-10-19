@@ -501,7 +501,7 @@
   .logo {
     position: relative;
     padding-bottom: 10px;
-    padding-right: 40px;
+    padding-right: 50px;
   }
 }
 
@@ -514,6 +514,7 @@ header nav {
 
 header nav .toggle-menu {
   padding: 5px;
+  padding-right: 20px;
   color: black;
   font-size: 40px;
   cursor: pointer; /* Ensure it looks clickable */
