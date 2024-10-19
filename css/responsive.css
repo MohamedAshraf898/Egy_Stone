@@ -265,9 +265,7 @@
   .theme-main-header .one-page-menu ul > li.active > a:before {
     top: 10px;
   }
-  .theme-main-header.fixed .one-page-menu {
-    display: none;
-  }
+
   .inner-page-main-banner .banner-text .text-wrapper > div .content {
     width: 80%;
   }
@@ -488,4 +486,81 @@
   .page-banner-wrapper .carousel-indicators {
     right: 10px;
   }
+}
+/**/
+
+/* Hide left and right buttons on mobile */
+@media (max-width: 768px) {
+  .left-button,
+  .right-button {
+    display: none; /* Hide both buttons */
+  }
+  .theme-main-header {
+    height: 0px;
+  }
+  .logo {
+    position: relative;
+    padding-bottom: 10px;
+    padding-right: 40px;
+  }
+}
+
+header nav {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+header nav .toggle-menu {
+  padding: 5px;
+  color: black;
+  font-size: 40px;
+  cursor: pointer; /* Ensure it looks clickable */
+}
+
+@media (min-width: 768px) {
+  header nav .toggle-menu {
+    display: none; /* Hide toggle button on larger screens */
+  }
+}
+
+header nav ul {
+  display: flex; /* Default display for larger screens */
+}
+
+@media (max-width: 767px) {
+  header nav ul {
+    display: none; /* Hide menu by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute; /* Position it absolutely */
+    top: 100%; /* Below the toggle button */
+    left: 0; /* Align to the left */
+    width: 100%; /* Full width */
+    background-color: white; /* Background color */
+    z-index: 999; /* Ensure it's above other content */
+  }
+
+  header nav .toggle-menu.active + ul {
+    display: flex; /* Show menu when active */
+  }
+
+  header nav ul li a {
+    padding: 15px !important; /* Add padding to links */
+  }
+}
+
+header nav ul li a {
+  padding: 20px;
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+header nav ul li a.active,
+header nav ul li a:hover {
+  color: var(--main-color);
+  border-bottom: 1px solid var(--main-color);
 }

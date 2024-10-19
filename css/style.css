@@ -637,7 +637,9 @@ footer .social-share li:before,
 .theme-main-header .right-button a:hover {
   background: #000;
 }
-
+.theme-main-header {
+  height: 100px;
+}
 /*** 
 
 ====================================================================
@@ -709,14 +711,14 @@ footer .social-share li:before,
   color: #292929;
   text-transform: uppercase;
   background: transparent !important;
-  line-height: 180px;
-  padding: 0 15px;
+  line-height: 110px;
+  padding: 0px 15px;
   position: relative;
 }
 .one-page-menu ul > li > a:before {
   content: "";
   width: 1px;
-  height: 36px;
+  height: 20px;
   background: #292929;
   position: absolute;
   top: 0;
@@ -726,7 +728,7 @@ footer .social-share li:before,
 .one-page-menu ul > li > a:hover:before,
 .one-page-menu ul > li.active > a:before {
   opacity: 1;
-  top: 40px;
+  top: 20px;
 }
 .one-page-menu ul > li > a:hover {
   color: #777777;
@@ -2619,4 +2621,63 @@ footer .social-share li:hover:before {
   font-size: 13px;
   text-transform: none;
   margin-top: 40px;
+}
+.theme-main-header {
+  position: relative;
+}
+
+.one-page-menu {
+  display: flex; /* Default display for larger screens */
+}
+
+.menu-toggle {
+  display: none; /* Hide toggle button by default */
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Show toggle button on mobile */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Pointer cursor */
+  }
+
+  .one-page-menu {
+    display: flex; /* Show menu by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white; /* Change as needed */
+    width: 100%;
+    z-index: 1000;
+  }
+
+  .one-page-menu.active {
+    display: flex; /* Show menu when active */
+  }
+
+  .one-page-menu ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  .one-page-menu li {
+    list-style: none;
+    text-align: center;
+    padding: 10px 0; /* Spacing between items */
+  }
+
+  .left-button,
+  .right-button {
+    display: none; /* Hide buttons on mobile */
+  }
+}
+
+@media (max-width: 768px) {
+  .left-button,
+  .right-button {
+    display: none; /* Hide both buttons */
+  }
 }
