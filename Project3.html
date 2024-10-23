@@ -39,45 +39,52 @@
         <!-- =============================================
 				Theme Logo
 				============================================== -->
-        <div class="container">
-          <a href="index.html" class="page-top-logo"
-            ><img src="images/logo/logo.png" alt="Logo"
-          /></a>
-        </div>
-
-        <!-- =============================================
-					Theme Header
-				============================================== -->
         <header class="theme-main-header">
           <div class="container">
-            <div class="container">
-              <div class="left-button float-left p-color-bg">
-                
-              </div>
-              <div class="right-button float-right p-color-bg">
-                <a  class="tran3s"
-                  
-                  ></a>
-              </div>
-  
-
-            <!-- ========================= One Page Menu ======================= -->
-            <div class="one-page-menu float-right">
-              <ul class="nav">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#concept-section">Concept</a></li>
-                <li><a href="index.html#service-section">Service</a></li>
-                <li class="active"><a href="Projects_Page.html">Projects</a></li>
-                <li><a href="Collection_Page.html">Collection</a></li>
-
-                <li><a href="index.html#about-section">About</a></li>
-
-                <li><a href="index.html#Contact-Us">Contact</a></li>
-              </ul>
+            </div>
+            <!-- One Page Menu -->
+            <div class="one-page-menu">
+              <nav>
+                <div class="float-left" style="position: absolute; top: 20%; left: 10%;">
+                  <a href="index.html"
+                ><img src="images/logo/logo.png" class="logo" alt="Logo" width="100px" height="50px"
+              /></a>
+                </div>
+                <div class="toggle-menu">☰</div> <!-- Menu icon -->
+                <ul class="nav">
+                  <li><a href="index.html#service-section">Service</a></li>
+                  <li><a href="index.html#concept-section">Concept</a></li>
+                  <li class="active"><a  href="Projects_Page.html">Projects</a></li>
+                  <li><a href="Collection_Page.html">Collection</a></li>
+                  <li><a href="index.html#about-section">About</a></li>
+                  <li><a href="index.html#Contact-Us">Contact</a></li>
+                </ul>
+              </nav>
             </div>
           </div>
         </header>
 
+        <script>
+          document.addEventListener("DOMContentLoaded", function() {
+            const toggleMenu = document.querySelector('.toggle-menu');
+            const menu = document.querySelector('.one-page-menu ul');
+        
+            // Toggle menu visibility on click
+            toggleMenu.addEventListener('click', function() {
+              toggleMenu.classList.toggle('active'); // Toggle active class
+              menu.classList.toggle('active'); // Show/hide menu
+            });
+        
+            // Close the menu when a link is clicked
+            const menuLinks = document.querySelectorAll('.one-page-menu ul li a');
+            menuLinks.forEach(link => {
+              link.addEventListener('click', function() {
+                toggleMenu.classList.remove('active'); // Remove active class from toggle
+                menu.classList.remove('active'); // Hide the menu
+              });
+            });
+          });
+        </script>
         <!-- =============================================
 					Inner Page Banner
 				============================================== -->
